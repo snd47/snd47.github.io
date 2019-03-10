@@ -1,0 +1,49 @@
+body {
+/*font-size: 13px;*/
+padding-top: 20px;
+}
+/*.container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {*/
+    /*width: 980px;*/
+    /*background: #fff;*/
+    /*border-radius: 10px;*/
+    /*padding: 5px;*/
+/*}*/
+
+header {
+    padding-bottom:20px;
+}
+.private_office>a {
+    background: url(http://www.aviso.ua/img/private_office.png) 0 0 no-repeat;
+    display: block;
+    height: 33px;
+    padding-left: 36px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 32px;
+    margin-top: 14px;
+    white-space: nowrap;
+}
+.footer {
+    background-color: #1c39a5;
+    padding: 15px 10px 20px;
+    color: #FFD603;
+    font-size: 12px;
+    position: relative;
+    width: auto;
+}
+.footer .ul_footer {
+    margin: 10px 0;
+}
+.ul_footer li {
+    text-decoration: none;
+    list-style:none;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.social-icon img {
+    width: 32px;
+    padding: 10px 0;
+    transition: 0.3s;
+}
