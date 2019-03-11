@@ -1,6 +1,71 @@
 $(window).load(function () {
     carouselFunc(docList);
+    $('#hidden').hide();
 });
+$(document).ready(function () {
+    $("#datepicker1").datepicker({
+            dateFormat: 'dd-mm-yy',
+            changeMonth: true,
+            changeYear: true,
+            minDate: '01-01-2013',
+            maxDate: '-1D'
+        },
+        $.datepicker.regional["ru"]
+    );
+
+
+    $("#datepicker2").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            maxDate: '-1D'
+        },
+        $.datepicker.regional["ru"]
+    );
+
+
+    /* Russian (UTF-8) initialisation for the jQuery UI date picker plugin. */
+    /* Written by Andrew Stromnov (stromnov@gmail.com). */
+    ( function( factory ) {
+        if ( typeof define === "function" && define.amd ) {
+
+            // AMD. Register as an anonymous module.
+            define( [ "../widgets/datepicker" ], factory );
+        } else {
+
+            // Browser globals
+            factory( jQuery.datepicker );
+        }
+    }( function( datepicker ) {
+
+        datepicker.regional.ru = {
+            closeText: "Закрыть",
+            prevText: "&#x3C;Пред",
+            nextText: "След&#x3E;",
+            currentText: "Сегодня",
+            monthNames: [ "Январь","Февраль","Март","Апрель","Май","Июнь",
+                "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь" ],
+            monthNamesShort: [ "Янв","Фев","Мар","Апр","Май","Июн",
+                "Июл","Авг","Сен","Окт","Ноя","Дек" ],
+            dayNames: [ "воскресенье","понедельник","вторник","среда","четверг","пятница","суббота" ],
+            dayNamesShort: [ "вск","пнд","втр","срд","чтв","птн","сбт" ],
+            dayNamesMin: [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ],
+            weekHeader: "Нед",
+            dateFormat: "dd.mm.yy",
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: "" };
+        datepicker.setDefaults( datepicker.regional.ru );
+
+        return datepicker.regional.ru;
+
+    } ) );
+});
+
+
+
+
 // -----------------------------------------------------------
 //Обработка клика на стрелку вправо
 $(document).on('click', ".carousel-button-right",function(){
@@ -191,66 +256,87 @@ function person() {
     html.append(
     "<h3 class='h4'>Документ зарегистрирован на:</h3>"
         +"<p class=''>"
-        +"<label class='col-sm-2 col-form-label' for=''>Фамилия</label>"
-        +"<input class='col-sm-10' id='' type='text' name='name' value='' placeholder=''>"
+        +"<label class='col-sm-3 col-form-label' for=''>Фамилия</label>"
+        +"<input class='col-sm-9' id='' type='text' name='name' value='' placeholder=''>"
         +"</p>"
         +"<p class=''>"
-        +"<label class='col-sm-2 col-form-label' for=''>Имя</label>"
-        +"<input class='col-sm-10' id='' type='text' name='name' value='' placeholder=''>"
+        +"<label class='col-sm-3 col-form-label' for=''>Имя</label>"
+        +"<input class='col-sm-9' id='' type='text' name='name' value='' placeholder=''>"
         +"</p>"
         +"<p class=''>"
-        +"<label class='col-sm-2 col-form-label' for=''>Отчество</label>"
-        +"<input class='col-sm-10' id='' type='text' name='name' value='' placeholder=''>"
+        +"<label class='col-sm-3 col-form-label' for=''>Отчество</label>"
+        +"<input class='col-sm-9' id='' type='text' name='name' value='' placeholder=''>"
         +"</p>"
         +"</div>"
         +"<div class='formSeries'></div>"
         +"<div class='formNum'></div>"
-        +"<div class='formDate'></div>"
-        +"<div class='form-conf'></div>"
+       // +"<p id='date1'>Date: <input type='text' id='datepicker' name='startDateId' >"
         +"<div class='form-conf'></div>"
     );
+    $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
     $(".lost-form").html(html);
 }
 
+function contact() {
+    var html = $("<div class=''>");
+    html.append(
+        "<h3 class='h4'>Контактные данные:</h3>"
+        +"<p>"
+        +"<label class='col-form-label d-flex'><span class='col-sm-3'>Фамилия</span>"
+        +"<input class='col-sm-9' type='text' name='contact-name' value='' placeholder=''></label>"
+        +"</p>"
+        +"<p>"
+        +"<label class='col-form-label d-flex'><span class='col-sm-3'>Имя</span>"
+        +"<input class='col-sm-9' type='text' name='contact-surname' value='' placeholder=''></label>"
+        +"</p>"
+        +"<p>"
+        +"<label class='col-form-label d-flex'><span class='col-sm-3'>Телефон</span>"
+        +"<input class='col-sm-9' type='tel' name='phone-number' value='' placeholder=''></label>"
+        +"</p>"
+        +"<p>"
+        +"<label class='col-form-label d-flex'><span class='col-sm-3'>Email</span>"
+        +"<input class='col-sm-9'  type='email' name='email-address' value='' placeholder='your@mail.com'></label>"
+        +"</p>"
+        +"<p class='d-flex justify-content-end'>"
+        +"<button class='btn btn-warning' type='submit'>Отправить</button>"
+        +"</p>"
+    );
+
+    $(".contact").html(html);
+}
 function series () {
     var html = $( "<p class=''>");
     html.append(
-        "<label class='col-sm-2 col-form-label' for=''>Серия</label>"
-        +"<input class='col-sm-10' id='' type='text' name='series' value='' placeholder=''>"
+        "<label class='col-sm-3 col-form-label' for=''>Серия</label>"
+        +"<input class='col-sm-9' id='' type='text' name='series' value='' placeholder=''>"
         +"</p>");
     $(".formSeries").html(html);
 }
 function docNumber () {
     var html = $( "<p class=''>");
     html.append(
-        "<label class='col-sm-2 col-form-label' or=''>Номер</label>"
-        +"<input class='col-sm-10' id='' type='text' name='series' value='' placeholder=''>"
+        "<label class='col-sm-3 col-form-label' or=''>Номер</label>"
+        +"<input class='col-sm-9' id='' type='text' name='series' value='' placeholder=''>"
         +"</p>");
     $(".formNum").html(html);
 }
-function issueDate () {
-    var html = $( "<div class='input-group date' id='datepicker' data-provide='datepicker'>");
-    html.append(
-        "<label for=''>Дата выдачи</label>"
-        +"<input type='text' class='form-control'><div class='input-group-addon'><span class='glyphicon glyphicon-th'></span></div>"
-        +"</div>");
-    $(".formDate").html(html);
-}
-// Сделать 5 ф-ий
-// Потом ф-ии проверки инпутов
+//
+// datepicker
 
-
-// $(function() {
-//     $('#datepicker').datepicker();
-// });
 
 $(document).on('click', ".btn-doc", function () {
+    $('#hidden').show();
     person();
    var i =  this.id.slice(-1)-1;
     if (docList.docs[i].series) series();
     if (docList.docs[i].number) docNumber();
-    if (docList.docs[i].issueDate) issueDate();
+  //  if (docList.docs[i].issueDate) issueDate();
+    contact();
 });
+
+
+
+
 
 
 

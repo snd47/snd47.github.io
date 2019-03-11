@@ -11,6 +11,12 @@
     <script type="text/javascript" src="./js/main.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles-carousel.css">
+<!--date-picker-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 </head>
 <body>
@@ -65,29 +71,28 @@
                                     <!--</div>-->
 
 
-         <!--<div class="input-group date" data-provide="datepicker">-->
-            <!--<input type="text" class="form-control">-->
-                <!--<div class="input-group-addon">-->
-                     <!--<span class="glyphicon glyphicon-th"></span>-->
-                <!--</div>-->
-            <!--</div>-->
-
-
                                 </div>
                             </div>
                         </div>
                         <!-- ===================== Форма ================================ -->
-                        <form class="lost-form" action="" method="post">
-                            <select name="lost-doc">
-                                <option value="passport">Паспорт</option>
-                                <option value="passport_new">Паспорт биометрический</option>
-                                <option value="drive_old">Права(старого образца)</option>
-                                <option value="drive_new">Права(пластик)</option>
-                                <option value="diploma">Диплом</option>
-                                <option value="birth_certificate">Свидетельство о рождениее</option>
+                        <!-- ===================== Форма ================================ -->
+                        <!--<div><p>Date: <input type="text" id="datepicker"></p></div>-->
+                        <form action="" method="post">
+                            <div class="lost-form" ></div>
+                            <div id="hidden"><p><label class='col-form-label d-flex'><span class='col-sm-3'>Дата выдачи </span><input type="text" id="datepicker1"></label></p>
+                                <p><label class='col-form-label d-flex'><span class='col-sm-3'>Дата окончания</span><input type="text" id="datepicker2"></label></p>
+                            </div>
+                            <div class="contact" ></div>
+                            <!--<select name="lost-doc">-->
+                                <!--<option value="passport">Паспорт</option>-->
+                                <!--<option value="passport_new">Паспорт биометрический</option>-->
+                                <!--<option value="drive_old">Права(старого образца)</option>-->
+                                <!--<option value="drive_new">Права(пластик)</option>-->
+                                <!--<option value="diploma">Диплом</option>-->
+                                <!--<option value="birth_certificate">Свидетельство о рождениее</option>-->
 
-                            </select>
-                            <button class="button" type="submit">Продолжить</button>
+                            <!--</select>-->
+                            <!--<button class="button" type="submit">Продолжить</button>-->
                         </form>
                     </section>
                 </div>
