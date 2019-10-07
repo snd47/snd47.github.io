@@ -13,10 +13,11 @@ module.exports = {
     ? '/notes/'
     // ? '/modals'
     
-    : '/',
-    assetsDir: '',
-    // assetsDir: 'assets',
-    productionSourceMap: false
+    : '/'
+    // ,
+    // assetsDir: '',
+    // // assetsDir: 'assets',
+    // productionSourceMap: false
 
     // publicPath: 'notes'
 }
