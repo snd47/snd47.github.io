@@ -6,14 +6,16 @@
 // site.com/modals/css/main.css
 
 module.exports = {
+    // baseUrl:'./',
+    // assetsDir:'./',
 
     publicPath: process.env.NODE_ENV === 'production'
     // на серевер только с /
 
-    ? '/notes/'
+    ? './'
     // ? '/modals'
     
-    : '/'
+    : './'
     // ,
     // assetsDir: '',
     // // assetsDir: 'assets',
